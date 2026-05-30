@@ -474,7 +474,7 @@ class Thor
       @stop_on_unknown_option ||= []
     end
 
-    # help command has the required check disabled by default.
+    # help and tree commands have the required check disabled by default.
     def disable_required_check #:nodoc:
       @disable_required_check ||= [:help, :tree]
     end
