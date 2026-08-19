@@ -577,14 +577,14 @@ Usage: "thor scripts:arities:multiple_usages ARG --foo"
         end
       end
 
-      describe "#class_exclusive" do
+      context "when class_exclusive is configured" do
         it "raises an error if the invoked command does not exist" do
           output = capture(:stderr) { ClassOptionRelationsTest::Exclusive.start(%w(typo)) }.strip
           expect(output).to eq('Could not find command "typo" in "class_option_relations_test:exclusive" namespace.')
         end
       end
 
-      describe "#class_at_least_one" do
+      context "when class_at_least_one is configured" do
         it "raises an error if the invoked command does not exist" do
           output = capture(:stderr) { ClassOptionRelationsTest::AtLeastOne.start(%w(typo)) }.strip
           expect(output).to eq("Not found at least one of required options '--foo', '--bar'")
