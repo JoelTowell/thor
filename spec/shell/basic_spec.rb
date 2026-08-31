@@ -113,7 +113,7 @@ describe Thor::Shell::Basic do
       expect(shell.ask("What's your favorite Neopolitan flavor?", default: "vanilla", limited_to: flavors)).to eq("vanilla")
     end
 
-    it "returns nil without reasking if EOF is given as input with limited answers" do
+    it "prints a message and returns nil if EOF is given as input with limited answers" do
       flavors = %w(strawberry chocolate vanilla)
       readline_calls = 0
 
